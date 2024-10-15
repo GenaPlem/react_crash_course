@@ -1,12 +1,12 @@
-import styles from './Post.module.css';
+import styles from "./Post.module.css";
 
-const Post = (props) => {
-    return(
-        <li className={styles.post}>
-            <p className={styles.author}>{props.author}</p>
-            <p className={styles.text}>{props.body}</p>
-        </li>
-    )
-}
+const Post = ({ author, body }) => {
+  return (
+    <li className={styles.post}>
+      <p className={styles.author}>{author}</p>
+      <p className={styles.text}>{body}</p>
+    </li>
+  );
+};
 
 export default Post;
