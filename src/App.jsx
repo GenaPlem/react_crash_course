@@ -1,10 +1,11 @@
 import './App.css'
+import Post from './components/Post';
 
 function App() {
 
   return (
-    <h1>Hello!</h1>
+    <Post />
   )
 }
 
-export default App
+export default App;
