@@ -5,31 +5,16 @@ import Post from "./Post";
 import styles from "./PostsList.module.css";
 
 const PostsList = ({ isPosting, onStopPosting }) => {
-  const [text, setText] = useState("");
-  const [author, setAuthor] = useState("");
-
-  const changeBodyHandler = (event) => {
-    setText(event.target.value);
-  };
-
-  const changeAuthorHandler = (e) => {
-    setAuthor(e.target.value);
-  };
-
   return (
     <>
       {isPosting && (
         <Modal onClose={onStopPosting}>
-          <NewPost
-            onBodyChange={changeBodyHandler}
-            onAuthorChange={changeAuthorHandler}
-            onCancel={onStopPosting}
-          />
+          <NewPost onCancel={onStopPosting} />
         </Modal>
       )}
       <ul className={styles.posts}>
-        <Post author={author} body={text} />
-        <Post author="David" body={"Check it, it is awesome!"} />
+        <Post author="Maxim" body="React is awesome" />
+        <Post author="David" body="Check it, it is awesome!" />
       </ul>
     </>
   );
