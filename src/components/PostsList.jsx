@@ -18,10 +18,19 @@ const PostsList = ({ isPosting, onStopPosting }) => {
           <NewPost onCancel={onStopPosting} onAddPost={addPostHandler} />
         </Modal>
       )}
-      <ul className={styles.posts}>
-        <Post author="Maxim" body="React is awesome" />
-        <Post author="David" body="Check it, it is awesome!" />
-      </ul>
+      {posts.length > 0 && (
+        <ul className={styles.posts}>
+          {posts.map((post, index) => (
+            <Post author={post.author} body={post.body} key={index} />
+          ))}
+        </ul>
+      )}
+      {posts.length === 0 && (
+        <div style={{ textAlign: "center", color: "white" }}>
+          <h2>There are no posts yet.</h2>
+          <p>Start adding some!</p>
+        </div>
+      )}
     </>
   );
 };
