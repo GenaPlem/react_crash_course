@@ -1,12 +1,11 @@
 import './App.css'
-import Post from './components/Post';
+import PostsList from './components/PostsList';
 
 function App() {
 
   return (
     <main>
-      <Post author='Maxim' body='React is awesome!'/>
-      <Post author='David' body='Check it, it is awesome!'/>
+      <PostsList />
     </main>
   )
 }
